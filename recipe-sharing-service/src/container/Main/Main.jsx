@@ -8,7 +8,7 @@ import Material_Registration from "../../asets/Material_Registration.png";
 
 import SearchBar from "../../component/SearchBar/SearchBar";
 import ListView from "../../component/ListView/ListView";
-// import Header from "../../component/Header/Header";
+import Header from "../../component/Header/Header";
 
 class main extends Component {
   constructor(props) {
@@ -91,7 +91,7 @@ class main extends Component {
 
     return (
       <div>
-        {/* <Header></Header> */}
+        <Header></Header>
         <Wrapper>
           <>
             <BackgroundImg>
