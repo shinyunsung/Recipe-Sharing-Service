@@ -10,16 +10,19 @@ class ListView extends Component {
   }
   render() {
     return (
-      <div
-        style={{
-          display: "inline",
-          width: "940px",
-          wordBreak: "break-all",
-        }}
-      >
+      <>
         <h2>{this.props.List.name}</h2>
-        <ItmeList List={this.props.List} />
-      </div>
+        <div
+          style={{
+            display: "inline-flex",
+            justifyContent: "space-between",
+            width: "940px",
+            wordBreak: "break-all",
+          }}
+        >
+          <ItmeList List={this.props.List} />
+        </div>
+      </>
     );
   }
 }
@@ -35,7 +38,6 @@ class ItmeList extends React.Component {
       return (
         <div
           style={{
-            marginRight: "13px",
             marginBottom: "80px",
             display: "inline-flex",
           }}
