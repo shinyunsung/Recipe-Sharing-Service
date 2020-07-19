@@ -9,17 +9,23 @@ class ListView extends Component {
     this.state = {};
   }
   render() {
+    if (!this.props.List) {
+      return <div>Loading...</div>;
+    }
     return (
-      <div
-        style={{
-          display: "inline",
-          width: "940px",
-          wordBreak: "break-all",
-        }}
-      >
+      <>
         <h2>{this.props.List.name}</h2>
-        <ItmeList List={this.props.List} />
-      </div>
+        <div
+          style={{
+            display: "inline-flex",
+            justifyContent: "space-between",
+            width: "940px",
+            wordBreak: "break-all",
+          }}
+        >
+          <ItmeList List={this.props.List} />
+        </div>
+      </>
     );
   }
 }
@@ -31,14 +37,14 @@ class ItmeList extends React.Component {
     this.state = {};
   }
   render() {
-    return this.props.List.Recipe.map((contact, i) => {
+    return this.props.List.Recipe.map((contact, index) => {
       return (
         <div
           style={{
-            marginRight: "13px",
             marginBottom: "80px",
             display: "inline-flex",
           }}
+          key={index}
         >
           <ItemInfo Like={contact.Like} Name={contact.Name} />
         </div>
@@ -78,7 +84,7 @@ class ItemInfo extends React.Component {
     return (
       <Item>
         <Picture>
-          <img img src="http://placehold.it/210x210" alt="고기사진" />
+          <img src="http://placehold.it/210x210" alt="고기사진" />
         </Picture>
         <Name>{this.props.Name}</Name>
         <div
