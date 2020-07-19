@@ -19,6 +19,7 @@ class ListView extends Component {
           style={{
             display: "inline-flex",
             justifyContent: "space-between",
+            flexWrap: "wrap",
             width: "940px",
             wordBreak: "break-all",
           }}
