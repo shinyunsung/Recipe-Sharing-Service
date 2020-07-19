@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import MainImg from "../../asets/MainImg.png";
 import recipe_registration from "../../asets/recipe_registration.png";
@@ -13,32 +14,28 @@ import ListView from "../../component/ListView/ListView";
 class main extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      List: {
-        ListName: [
-          {
-            name: "금주의 레시피",
-            Recipe: [
-              { Name: "1.고기 먹고 싶다.", Like: "100" },
-              { Name: "2.고기가 먹고 싶다.", Like: "200" },
-              { Name: "3.고기를 먹고 싶다.", Like: "300" },
-              { Name: "4.고기는 먹고 싶다.", Like: "400" },
-            ],
-          },
-          {
-            name: "공동구매 레시피",
-            Recipe: [
-              { Name: "1.고기 먹고 싶다.", Like: "100" },
-              { Name: "2.고기가 먹고 싶다.", Like: "200" },
-              { Name: "3.고기를 먹고 싶다.", Like: "300" },
-              { Name: "4.고기는 먹고 싶다.", Like: "400" },
-            ],
-          },
-        ],
-      },
+      PopularityRecipe: [],
     };
   }
+  componentDidMount() {
+    this._getList();
+  }
+
+  _getList() {
+    const apiUrl = "dummy/PopularityRecipe.json";
+    axios
+      .get(apiUrl)
+      .then((data) => {
+        this.setState({
+          PopularityRecipe: data.data.PopularityRecipe,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     const Wrapper = styled.div`
       margin: 0 auto;
@@ -105,8 +102,8 @@ class main extends Component {
             </BackgroundImg>
           </>
           <SearchBar></SearchBar>
-          <ListView List={this.state.List.ListName[0]}></ListView>
-          <ListView List={this.state.List.ListName[1]}></ListView>
+          <ListView List={this.state.PopularityRecipe[0]}></ListView>
+          <ListView List={this.state.PopularityRecipe[1]}></ListView>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <RegisterButton>
               <img src={recipe_registration} alt="레시피 등록" />

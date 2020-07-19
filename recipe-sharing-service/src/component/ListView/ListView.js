@@ -9,6 +9,9 @@ class ListView extends Component {
     this.state = {};
   }
   render() {
+    if (!this.props.List) {
+      return <div>Loading...</div>;
+    }
     return (
       <>
         <h2>{this.props.List.name}</h2>
@@ -34,13 +37,14 @@ class ItmeList extends React.Component {
     this.state = {};
   }
   render() {
-    return this.props.List.Recipe.map((contact, i) => {
+    return this.props.List.Recipe.map((contact, index) => {
       return (
         <div
           style={{
             marginBottom: "80px",
             display: "inline-flex",
           }}
+          key={index}
         >
           <ItemInfo Like={contact.Like} Name={contact.Name} />
         </div>
@@ -80,7 +84,7 @@ class ItemInfo extends React.Component {
     return (
       <Item>
         <Picture>
-          <img img src="http://placehold.it/210x210" alt="고기사진" />
+          <img src="http://placehold.it/210x210" alt="고기사진" />
         </Picture>
         <Name>{this.props.Name}</Name>
         <div
