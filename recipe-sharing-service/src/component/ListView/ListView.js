@@ -47,7 +47,7 @@ class ItmeList extends React.Component {
           }}
           key={index}
         >
-          <ItemInfo Like={contact.Like} Name={contact.Name} />
+          <ItemInfo Like={contact.Like} Name={contact.Name} id={contact.id} />
         </div>
       );
     });

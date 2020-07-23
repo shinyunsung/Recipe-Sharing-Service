@@ -1,22 +1,151 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import "./RecipeRegistration.css";
 import Header from "../../component/Header/Header";
 
 import Camera from "../../asets/mdi_camera_alt.png";
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  padding: 80px;
+  width: 780px;
+  background-color: white;
+`;
+
+const Section = styled.div`
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+`;
+const HalfSegmentation = styled.div`
+  display: -webkit-box;
+  justify-content: flex-end;
+  width: 390px;
+`;
+const DividingLine = styled.div`
+  border-bottom: 1px solid #c4c4c4;
+  margin-bottom: 40px;
+`;
+
+const Subtitle = styled.div`
+  font-size: 16px;
+  line-height: 18px;
+`;
+
+const Input = styled.input.attrs({
+  type: "text",
+})`
+  width: ${(props) => props.width || "380px"};
+  height: ${(props) => props.height || "20px"};
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #c4c4c4;
+  resize: none;
+  ::placeholder {
+    color: #c4c4c4;
+  }
+`;
+
+const InputImg = styled.div`
+  width: ${(props) => props.width || "300px"};
+  height: ${(props) => props.width || "300px"};
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const InputImgBtn = styled.input.attrs({
+  type: "file",
+  id: "inputImgBtn",
+})`
+  display: none;
+`;
+
+const InputImgLabel = styled.label.attrs({
+  htmlFor: "inputImgBtn",
+})`
+  width: 100px;
+  height: 20px;
+  background: #bdbdbd;
+  font-size: 12px;
+  line-height: 14px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
+  display: felx;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DescriptionModule = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  // flex-wrap: wrap;
+`;
+
+const Button = styled.button`
+  width: 140px;
+  height: 60px;
+
+  background: #bdbdbd;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.2em;
+  border: none;
+  &:hover {
+    background: #ff6600;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+const HashtagArea = styled.div.attrs({
+  id: "HashtagArea",
+})`
+  display: inline-block;
+  width: 100%;
+  height: 140px;
+`;
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       PopularityRecipe: [],
-
       hashtag: [],
+
+      DescriptionModule: "",
+      RecipeTitle: "",
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.onChangeHashtagArea = this.onChangeHashtagArea.bind(this);
+  }
+
+  componentDidMount() {
+    this._getList();
+  }
+
+  _getList() {
+    const apiUrl = ""; //url 입력
+    axios
+      .post(apiUrl, null, {
+        params: {
+          RecipeTitle: this.state.RecipeTitle,
+          hashtag: this.state.hashtag,
+        },
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   handleKeyPress = (e) => {
@@ -24,123 +153,18 @@ class App extends Component {
       this.setState({
         hashtag: this.state.hashtag.concat(e.target.value),
       });
-
-      // this.onChangeHashtagArea();
+      e.target.value = "";
     } else {
     }
   };
 
-  onChangeHashtagArea() {
-    // var HashtagArea = document.getElementById("HashtagArea");
-    // console.log("성공");
-  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
   render() {
-    const Wrapper = styled.div`
-      margin: 0 auto;
-      padding: 80px;
-      width: 780px;
-      background-color: white;
-    `;
-
-    const Section = styled.div`
-      margin-bottom: 100px;
-      display: flex;
-      justify-content: center;
-    `;
-    const HalfSegmentation = styled.div`
-      display: -webkit-box;
-      justify-content: flex-end;
-      width: 390px;
-    `;
-    const DividingLine = styled.div`
-      border-bottom: 1px solid #c4c4c4;
-      margin-bottom: 40px;
-    `;
-
-    const Subtitle = styled.div`
-      font-size: 16px;
-      line-height: 18px;
-    `;
-
-    const Input = styled.input.attrs({
-      type: "text",
-    })`
-      width: ${(props) => props.width || "380px"};
-      height: ${(props) => props.height || "20px"};
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #c4c4c4;
-      resize: none;
-      ::placeholder {
-        color: #c4c4c4;
-      }
-    `;
-
-    const InputImg = styled.div`
-      width: ${(props) => props.width || "300px"};
-      height: ${(props) => props.width || "300px"};
-      background: #e5e5e5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    `;
-
-    const InputImgBtn = styled.input.attrs({
-      type: "file",
-      id: "inputImgBtn",
-    })`
-      display: none;
-    `;
-
-    const InputImgLabel = styled.label.attrs({
-      htmlFor: "inputImgBtn",
-    })`
-      width: 100px;
-      height: 20px;
-      background: #bdbdbd;
-      font-size: 12px;
-      line-height: 14px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-
-      display: felx;
-      justify-content: center;
-      align-items: center;
-    `;
-
-    const DescriptionModule = styled.div`
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      // flex-wrap: wrap;
-    `;
-
-    const Button = styled.button`
-      width: 140px;
-      height: 60px;
-
-      background: #bdbdbd;
-      font-weight: 800;
-      font-size: 18px;
-      line-height: 20px;
-      letter-spacing: 0.2em;
-      border: none;
-      &:hover {
-        background: #ff6600;
-        color: white;
-        cursor: pointer;
-      }
-    `;
-
-    const HashtagArea = styled.div.attrs({
-      id: "HashtagArea",
-    })`
-      display: inline-block;
-      width: 100%;
-      height: 140px;
-    `;
     return (
       <div>
         <Header></Header>
@@ -154,7 +178,11 @@ class App extends Component {
             <HalfSegmentation>
               <label>
                 <Subtitle>레시피 제목</Subtitle>
-                <Input placeholder="레시피 제목을 입력하세요. " />
+                <Input
+                  id="RecipeTitle"
+                  placeholder="레시피 제목을 입력하세요. "
+                  onChange={this.handleChange}
+                />
               </label>
               <label>
                 <Subtitle>식재료 태그</Subtitle>
@@ -163,9 +191,7 @@ class App extends Component {
                   onKeyPress={this.handleKeyPress}
                 />
               </label>
-              <HashtagArea onChange={this.onChangeHashtagArea}>
-                {/* <Hashtag>{this.state.hashtag + ""}</Hashtag> */}
-
+              <HashtagArea>
                 <HashtagList Hashtag={this.state.hashtag}></HashtagList>
               </HashtagArea>
             </HalfSegmentation>
@@ -195,7 +221,13 @@ class App extends Component {
               </InputImg>
 
               {/* Input Description */}
-              <Input as="textarea" width="520px" height="200px"></Input>
+              <Input
+                id="DescriptionModule"
+                onChange={this.handleChange}
+                as="textarea"
+                width="520px"
+                height="200px"
+              ></Input>
             </DescriptionModule>
           </Section>
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import MainImg from "../../asets/MainImg.png";
 import recipe_registration from "../../asets/recipe_registration.png";
@@ -105,9 +106,12 @@ class main extends Component {
           <ListView List={this.state.PopularityRecipe[0]}></ListView>
           <ListView List={this.state.PopularityRecipe[1]}></ListView>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <RegisterButton>
-              <img src={recipe_registration} alt="레시피 등록" />
-            </RegisterButton>
+            <Link to="/RecipeRegistration">
+              <RegisterButton>
+                <img src={recipe_registration} alt="레시피 등록" />
+              </RegisterButton>
+            </Link>
+
             <RegisterButton>
               <img src={Material_Registration} alt="식재료 등록" />
             </RegisterButton>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Logo from "../../asets/Logo.png";
 
@@ -31,7 +32,9 @@ class Header extends Component {
     return (
       <Body>
         <Wrapper>
-          <img src={Logo} alt="logo"></img>
+          <Link to="">
+            <img src={Logo} alt="logo"></img>
+          </Link>
         </Wrapper>
       </Body>
     );

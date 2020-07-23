@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 import Search from "../../asets/search.png";
+import { Link } from "react-router-dom";
 
 class SerchBar extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class SerchBar extends Component {
       width: 420px;
       height: 40px;
       background: #ffffff;
-      border: 1px solid #ff6600;
+      border: 1px solid ${(props) => props.theme.mainColor};
       box-sizing: border-box;
       outline: none;
     `;
@@ -23,7 +24,7 @@ class SerchBar extends Component {
     const Button = styled.button`
       width: 40px;
       height: 40px;
-      background: #ff6600;
+      background: ${(props) => props.theme.mainColor};
       border: none;
       cursor: pointer;
     `;
@@ -38,7 +39,9 @@ class SerchBar extends Component {
       <Div>
         <Input type="text" placeholder="나는 배고프다 고로 검색한다." />
         <Button>
-          <img src={Search} alt="search" />
+          <Link to={`/SearchRecipe`}>
+            <img src={Search} alt="search" />
+          </Link>
         </Button>
       </Div>
     );
