@@ -11,7 +11,28 @@ class App extends Component {
     super(props);
     this.state = {
       PopularityRecipe: [],
+
+      hashtag: [],
     };
+
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.onChangeHashtagArea = this.onChangeHashtagArea.bind(this);
+  }
+
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.setState({
+        hashtag: this.state.hashtag.concat(e.target.value),
+      });
+
+      // this.onChangeHashtagArea();
+    } else {
+    }
+  };
+
+  onChangeHashtagArea() {
+    // var HashtagArea = document.getElementById("HashtagArea");
+    // console.log("성공");
   }
   render() {
     const Wrapper = styled.div`
@@ -73,14 +94,14 @@ class App extends Component {
     `;
 
     const InputImgLabel = styled.label.attrs({
-      for: "inputImgBtn",
+      htmlFor: "inputImgBtn",
     })`
       width: 100px;
       height: 20px;
       background: #bdbdbd;
       font-size: 12px;
       line-height: 14px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
       cursor: pointer;
 
       display: felx;
@@ -112,6 +133,14 @@ class App extends Component {
         cursor: pointer;
       }
     `;
+
+    const HashtagArea = styled.div.attrs({
+      id: "HashtagArea",
+    })`
+      display: inline-block;
+      width: 100%;
+      height: 140px;
+    `;
     return (
       <div>
         <Header></Header>
@@ -129,8 +158,16 @@ class App extends Component {
               </label>
               <label>
                 <Subtitle>식재료 태그</Subtitle>
-                <Input placeholder="식재료 태그를 입력하세요. " />
+                <Input
+                  placeholder="식재료 태그를 입력 후 Enter를 누르세요. "
+                  onKeyPress={this.handleKeyPress}
+                />
               </label>
+              <HashtagArea onChange={this.onChangeHashtagArea}>
+                {/* <Hashtag>{this.state.hashtag + ""}</Hashtag> */}
+
+                <HashtagList Hashtag={this.state.hashtag}></HashtagList>
+              </HashtagArea>
             </HalfSegmentation>
 
             {/* Input Img */}
@@ -176,6 +213,52 @@ class App extends Component {
             </div>
           </Section>
         </Wrapper>
+      </div>
+    );
+  }
+}
+
+class HashtagList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+  render() {
+    return this.props.Hashtag.map((contact, index) => {
+      return (
+        <div
+          style={{
+            display: "inline-flex",
+          }}
+          key={index}
+        >
+          <ItemInfo Hashtag={this.props.Hashtag[index]} />
+        </div>
+      );
+    });
+  }
+}
+
+class ItemInfo extends React.Component {
+  render() {
+    const Hashtag = styled.div`
+      margin: 5px;
+      padding: 5px 15px;
+      background: #ffffff;
+      border: 1px solid #ff6600;
+      box-sizing: border-box;
+      border-radius: 50px;
+      display: inline-block;
+
+      font-size: 14px;
+      text-align: center;
+
+      color: #888888;
+    `;
+    return (
+      <div>
+        <Hashtag>#{this.props.Hashtag}</Hashtag>
       </div>
     );
   }
