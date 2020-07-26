@@ -5,8 +5,7 @@ import axios from "axios";
 
 import "./RecipeRegistration.css";
 import Header from "../../component/Header/Header";
-
-import Camera from "../../asets/mdi_camera_alt.png";
+import InputImage from "./InputImage";
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -49,38 +48,43 @@ const Input = styled.input.attrs({
   }
 `;
 
-const InputImg = styled.div`
-  width: ${(props) => props.width || "300px"};
-  height: ${(props) => props.width || "300px"};
-  background: #e5e5e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+// const InputImg = styled.div`
+//   width: ${(props) => props.width || "300px"};
+//   height: ${(props) => props.width || "300px"};
+//   // background: #e5e5e5;
+//   background-image: url(${Camera});
+//   background-size: ${(props) => props.width || "300px"}
+//     ${(props) => props.width || "300px"};
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// `;
 
-const InputImgBtn = styled.input.attrs({
-  type: "file",
-  id: "inputImgBtn",
-})`
-  display: none;
-`;
+// const InputImgBtn = styled.input.attrs({
+//   type: "file",
+//   id: "inputImgBtn",
+// })`
+//   bottom: 0;
+//   display: none;
+// `;
 
-const InputImgLabel = styled.label.attrs({
-  htmlFor: "inputImgBtn",
-})`
-  width: 100px;
-  height: 20px;
-  background: #bdbdbd;
-  font-size: 12px;
-  line-height: 14px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+// const InputImgLabel = styled.label.attrs({
+//   htmlFor: "inputImgBtn",
+// })`
+//   width: 100px;
+//   height: 20px;
+//   background: #bdbdbd;
+//   font-size: 12px;
+//   line-height: 14px;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+//   cursor: pointer;
+//   margin-top: 80px;
 
-  display: felx;
-  justify-content: center;
-  align-items: center;
-`;
+//   display: felx;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 const DescriptionModule = styled.div`
   display: flex;
@@ -189,6 +193,8 @@ class App extends Component {
                 <Input
                   placeholder="식재료 태그를 입력 후 Enter를 누르세요. "
                   onKeyPress={this.handleKeyPress}
+                  name="imgFile"
+                  id="imgFile"
                 />
               </label>
               <HashtagArea>
@@ -198,13 +204,16 @@ class App extends Component {
 
             {/* Input Img */}
             <HalfSegmentation>
+              {/*
               <InputImg>
-                <img src={Camera} alt="등록 아이콘" />
+                //<img src={Camera} alt="등록 아이콘" />
                 <InputImgLabel>
                   사진등록하기
-                  <InputImgBtn></InputImgBtn>
+                  <InputImage></InputImage>
                 </InputImgLabel>
               </InputImg>
+              */}
+              <InputImage name="MainImg" width="300px"></InputImage>
             </HalfSegmentation>
           </Section>
 
@@ -212,13 +221,15 @@ class App extends Component {
           <Section>
             <DescriptionModule>
               {/* Input Img */}
-              <InputImg width="220px">
-                <img src={Camera} alt="등록 아이콘" />
+              {/* <InputImg width="220px">
+                {/* <img src={Camera} alt="등록 아이콘" />
                 <InputImgLabel>
                   사진등록하기
                   <InputImgBtn></InputImgBtn>
                 </InputImgLabel>
-              </InputImg>
+              </InputImg> */}
+
+              <InputImage name="SubImg" width="220px"></InputImage>
 
               {/* Input Description */}
               <Input
