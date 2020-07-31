@@ -11,6 +11,7 @@ import Material_Registration from "../../asets/Material_Registration.png";
 import SearchBar from "../../component/SearchBar/SearchBar";
 import ListView from "../../component/ListView/ListView";
 import Header from "../../component/Header/Header";
+import "./Main.css";
 
 class main extends Component {
   constructor(props) {
@@ -88,7 +89,7 @@ class main extends Component {
     `;
 
     return (
-      <div>
+      <div style={{ backgroundColor: "white" }}>
         <Header></Header>
         <Wrapper>
           <>
@@ -104,17 +105,26 @@ class main extends Component {
           </>
           <SearchBar></SearchBar>
           <ListView List={this.state.PopularityRecipe[0]}></ListView>
+          <Link to="/MoreRecipe">
+            <h4 style={{ marginTop: "-50px", textAlign: "right" }}>더보기</h4>
+          </Link>
+
           <ListView List={this.state.PopularityRecipe[1]}></ListView>
+          <Link to="/MoreJointPurchase">
+            <h4 style={{ marginTop: "-50px", textAlign: "right" }}>더보기</h4>
+          </Link>
+
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Link to="/RecipeRegistration">
               <RegisterButton>
                 <img src={recipe_registration} alt="레시피 등록" />
               </RegisterButton>
             </Link>
-
-            <RegisterButton>
-              <img src={Material_Registration} alt="식재료 등록" />
-            </RegisterButton>
+            <Link to="/JointPurchaseRegistration">
+              <RegisterButton>
+                <img src={Material_Registration} alt="식재료 등록" />
+              </RegisterButton>
+            </Link>
           </div>
         </Wrapper>
       </div>

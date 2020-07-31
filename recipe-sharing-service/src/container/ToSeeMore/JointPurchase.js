@@ -20,7 +20,7 @@ class main extends Component {
   }
 
   _getList() {
-    const apiUrl = "dummy/SearchResultsList.json";
+    const apiUrl = "dummy/MoreJointPurchase.json";
     axios
       .get(apiUrl)
       .then((data) => {

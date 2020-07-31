@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Like from "../../asets/mdi_thumb_up.png";
 class ListView extends Component {
@@ -47,7 +48,17 @@ class ItmeList extends React.Component {
           }}
           key={index}
         >
-          <ItemInfo Like={contact.Like} Name={contact.Name} id={contact.id} />
+          <Link
+            to="/ViewRecipe"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ItemInfo
+              Like={contact.Like}
+              Name={contact.Name}
+              id={contact.id}
+              Image={contact.Image}
+            />
+          </Link>
         </div>
       );
     });
@@ -85,7 +96,11 @@ class ItemInfo extends React.Component {
     return (
       <Item>
         <Picture>
-          <img src="http://placehold.it/210x210" alt="고기사진" />
+          <img
+            src={this.props.Image}
+            alt=""
+            style={{ width: "210px", height: "210px", objectFit: "cover" }}
+          />
         </Picture>
         <Name>{this.props.Name}</Name>
         <div

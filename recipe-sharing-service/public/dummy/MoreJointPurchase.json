@@ -1,0 +1,81 @@
+{
+  "SearchResultsList": [
+    {
+      "name": "공동구매 더보기",
+      "Recipe": [
+        {
+          "Name": "해남배추 같이 사실 분 구합니다",
+          "Like": "123",
+          "id": 1,
+          "Image": "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F257BDC4A58194B1134"
+        },
+        {
+          "Name": "강원도 감자 5kg 나누실 분",
+          "Like": "232",
+          "id": 2,
+          "Image": "https://t1.daumcdn.net/liveboard/realfood/3adee9b2e69e4103a12044ed5899f351.JPG"
+        },
+        {
+          "Name": "레몬청 나눔합니다",
+          "Like": "497",
+          "id": 3,
+          "Image": "https://recipe1.ezmember.co.kr/cache/recipe/2015/08/06/6c78ff4cebd7cc76d721acf14c6d76051.jpg"
+        },
+        {
+          "Name": "옥수수 나누실 분",
+          "Like": "147",
+          "id": 4,
+          "Image": "https://health.chosun.com/site/data/img_dir/2019/07/11/2019071100811_0.jpg"
+        },
+        {
+          "Name": "양파 가져가실 분",
+          "Like": "362",
+          "id": 5,
+          "Image": "https://cafeptthumb-phinf.pstatic.net/MjAxOTA2MThfNSAg/MDAxNTYwODMwODM1NzQ4.gXiHdx7RUyW43WwenlL8JxxmM3pr3UiwIOtc7PZJSz0g.u3PysQIv1_Vcn617BQduV9_4NCz1tw-6hOiHaFN95LIg.JPEG/externalFile.jpg?type=w740"
+        },
+        {
+          "Name": "집김치 삽니다",
+          "Like": "578",
+          "id": 6,
+          "Image": "https://cdn.crowdpic.net/detail-thumb/thumb_d_AAA4C5E8C1E29791413BFBFF5419BA73.jpg"
+        },
+        {
+          "Name": "장동 쿠팡 같이 시키실 분",
+          "Like": "10",
+          "id": 7,
+          "Image": "https://modo-phinf.pstatic.net/20190410_273/1554864499845Qf3vh_PNG/mosayfCN84.png?type=w1100"
+        },
+        {
+          "Name": "당근 필요하신 분 가져가세요",
+          "Like": "325",
+          "id": 8,
+          "Image": "http://blogfiles.naver.net/MjAyMDAyMTVfMzcg/MDAxNTgxNzI2OTAzODg5.hVEg0Wtt0M4lTFeV8YD68FjGdwNRZbCQ7GqVF2gVG6Eg.9HprE404eSUB7L08YsIbEAUhE5z_4eTMLblhPgGYsGUg.JPEG.ngelion/d3416fc0489f3a53054dc9477aace3391a2800284c6bb5.jpg"
+        },
+        {
+          "Name": "복숭아랑 감자 교환하실 분 구합니다",
+          "Like": "493",
+          "id": 9,
+          "Image": "http://blogfiles.naver.net/20120718_119/wwe3139_1342595780989QwNq4_JPEG/peaches.jpg"
+        },
+        {
+          "Name": "귤 가져가실 분",
+          "Like": "110",
+          "id": 10,
+          "Image": "https://t1.daumcdn.net/cfile/tistory/9953473B5C36E99607"
+        },
+        {
+          "Name": "대파 3kg 사서 나누실 분 구합니다",
+          "Like": "367",
+          "id": 11,
+          "Image": "https://image.auction.co.kr/itemimage/1b/ff/60/1bff609503.jpg"
+        },
+        {
+          "Name": "아스파라거스 가져가세요",
+          "Like": "391",
+          "id": 12,
+          "Image": "https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/2JVJ/image/Is4EIwrkH5EryY5kupX0cV5PKZs.jpg"
+        }
+      ]
+    }
+  ]
+}

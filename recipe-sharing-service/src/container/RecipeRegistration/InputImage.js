@@ -18,7 +18,7 @@ class InputImgage extends Component {
     let file = event.target.files[0];
     reader.onloadend = () => {
       this.setState({
-        file: file,
+        File: file,
         previewURL: reader.result,
       });
     };
@@ -40,19 +40,20 @@ class InputImgage extends Component {
 
     const InputImgBtn = styled.input.attrs({
       type: "file",
-      id: "inputImgBtn",
+      id: this.props.name,
       accept: "image/jpg,impge/png,image/jpeg,image/gif",
     })`
       bottom: 0;
+      margin: 100px 0 0;
       display: none;
     `;
 
     const InputImgLabel = styled.label.attrs({
-      htmlFor: "inputImgBtn",
+      htmlFor: this.props.name,
     })`
       width: 100px;
       height: 20px;
-      background: #bdbdbd;
+      background: #bdbdbd0;
       font-size: 12px;
       line-height: 14px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -63,7 +64,7 @@ class InputImgage extends Component {
       justify-content: center;
       align-items: center;
     `;
-
+    console.log(this.state.File);
     return (
       <div>
         <InputImg width={this.props.width}>
@@ -71,6 +72,7 @@ class InputImgage extends Component {
             <InputImgBtn onChange={this.handleFileOnChange}></InputImgBtn>
             사진등록하기
           </InputImgLabel>
+          {/* {this.state.File} */}
         </InputImg>
       </div>
     );

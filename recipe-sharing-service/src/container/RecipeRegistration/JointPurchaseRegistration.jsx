@@ -84,6 +84,7 @@ class App extends Component {
 
       DescriptionModule: "",
       RecipeTitle: "",
+      adress: "",
     };
   }
 
@@ -132,7 +133,7 @@ class App extends Component {
       <div>
         <Header></Header>
         <Wrapper>
-          <h2>레시피 등록</h2>
+          <h2>공동구매 등록</h2>
           <DividingLine></DividingLine>
 
           {/* ===== Top section ===== */}
@@ -140,7 +141,7 @@ class App extends Component {
             {/* Input Title */}
             <HalfSegmentation>
               <label>
-                <Subtitle>레시피 제목</Subtitle>
+                <Subtitle>식재료 등록</Subtitle>
                 <Input
                   id="RecipeTitle"
                   placeholder="레시피 제목을 입력하세요. "
@@ -148,7 +149,15 @@ class App extends Component {
                 />
               </label>
               <label>
-                <Subtitle>식재료 태그</Subtitle>
+                <Subtitle>주소</Subtitle>
+                <Input
+                  id="adress"
+                  placeholder="주소를 입력하세요. "
+                  onChange={this.handleChange}
+                />
+              </label>
+              <label>
+                <Subtitle>식재료 설명 태그</Subtitle>
                 <Input
                   placeholder="식재료 태그를 입력 후 Enter를 누르세요. "
                   onKeyPress={this.handleKeyPress}
@@ -156,6 +165,7 @@ class App extends Component {
                   id="imgFile"
                 />
               </label>
+
               <HashtagArea>
                 <HashtagList Hashtag={this.state.hashtag}></HashtagList>
               </HashtagArea>

@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
+// import { Link } from "react-router-dom";
 
 import SearchBar from "../../component/SearchBar/SearchBar";
 import ListView from "../../component/ListView/ListView";
@@ -20,7 +21,7 @@ class main extends Component {
   }
 
   _getList() {
-    const apiUrl = "dummy/SearchResultsList.json";
+    const apiUrl = "dummy/MoreRecipe.json";
     axios
       .get(apiUrl)
       .then((data) => {
@@ -44,7 +45,9 @@ class main extends Component {
         <Header></Header>
         <Wrapper>
           <SearchBar></SearchBar>
+          {/* <Link to="/"> */}
           <ListView List={this.state.SearchResultsList[0]}></ListView>
+          {/* </Link> */}
         </Wrapper>
       </div>
     );
