@@ -7,19 +7,19 @@
           "Name": "1.초간단 비법 오일로 파스타 9개 만들기",
           "Like": "568",
           "id": 1,
-          "Image":"https://homecuisine.co.kr/files/attach/images/1462/556/083/3f14d538fde95532c6a8a3d18f3de914.JPG"
+          "Image": "https://homecuisine.co.kr/files/attach/images/1462/556/083/3f14d538fde95532c6a8a3d18f3de914.JPG"
         },
         {
           "Name": "2.에어프라이어로 통삼겹 구이",
           "Like": "232",
           "id": 2,
-          "Image":"https://i.ytimg.com/vi/-YlTTGlAhag/maxresdefault.jpg"
+          "Image": "https://i.ytimg.com/vi/-YlTTGlAhag/maxresdefault.jpg"
         },
         {
           "Name": "3.초간단 김치찌개",
           "Like": "497",
           "id": 3,
-          "Image":"https://recipe1.ezmember.co.kr/cache/recipe/2016/10/11/6dcc7dd9434577d65a9acb8ec97043591.jpg"
+          "Image": "https://recipe1.ezmember.co.kr/cache/recipe/2016/10/11/6dcc7dd9434577d65a9acb8ec97043591.jpg"
         },
         {
           "Name": "4.초당옥수수 버터솥밥",
@@ -67,15 +67,15 @@
           "Name": "10.전자레인지로 만드는 초간단 브라우니",
           "Like": "367",
           "id": 11,
-          "Image":"https://i.ytimg.com/vi/2r5ZbabUbFw/hqdefault.jpg"
+          "Image": "https://i.ytimg.com/vi/2r5ZbabUbFw/hqdefault.jpg"
         },
         {
           "Name": "11.만원으로 반찬 5가지 만들기",
           "Like": "391",
           "id": 12,
-          "Image":"https://recipe1.ezmember.co.kr/cache/recipe/2019/08/14/7300e35a97a8052805ceab9db25200691.jpg"
+          "Image": "https://recipe1.ezmember.co.kr/cache/recipe/2019/08/14/7300e35a97a8052805ceab9db25200691.jpg"
         }
-          ]
-        }
+      ]
+    }
   ]
 }

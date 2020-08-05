@@ -1,0 +1,20 @@
+{
+  "DetailRecipe": {
+    "name": "해남배추 같이 사실 분 구합니다.",
+    "tag": ["해남", "배추", "1kg", "5000원"],
+    "List": [
+      {
+        "Image": "https://www.kenews.co.kr/data/photos/20200415/art_15862398455749_785a43.jpg",
+        "text": " 배추 1개 5000원"
+      },
+      {
+        "Image": "https://th1.tmon.kr/thumbs/image/ff1/472/864/d717b85ef_700x700_95_FIT_1541757887.jpg",
+        "text": " 배추 2개 8000원 "
+      },
+      {
+        "Image": "https://t1.daumcdn.net/cfile/tistory/222DD8425899BA1231",
+        "text": " 배추 3개 26000원"
+      }
+    ]
+  }
+}

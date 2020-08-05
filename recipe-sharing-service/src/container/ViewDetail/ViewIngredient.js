@@ -19,7 +19,7 @@ class main extends Component {
   }
 
   _getList() {
-    const apiUrl = "dummy/DetailRecipe.json";
+    const apiUrl = "dummy/DetailIngredient.json";
     axios
       .get(apiUrl)
       .then((data) => {
@@ -41,7 +41,7 @@ class main extends Component {
 
     const MainImg = styled.img.attrs({
       src:
-        "https://recipe1.ezmember.co.kr/cache/recipe/2017/11/21/0a09214720ddf173d39103262f06ebf11.jpg",
+        "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F257BDC4A58194B1134",
       alt: "메인 이미지",
     })`
       margin-top: 40px;
@@ -89,7 +89,9 @@ class main extends Component {
           </Section>
 
           <Section>
-            <h4 style={{ textAlign: "left", padding: "10px 20px " }}>[재료]</h4>
+            <h4 style={{ textAlign: "left", padding: "10px 20px " }}>
+              [공동구매 관련 태그]
+            </h4>
             <ListView List={this.state.DetailRecipe.tag}></ListView>
           </Section>
 

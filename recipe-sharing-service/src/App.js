@@ -6,6 +6,8 @@ import MoreRecipe from "./container/ToSeeMore/Recipe";
 import MoreJointPurchase from "./container/ToSeeMore/JointPurchase";
 import ViewRecipe from "./container/ViewDetail/ViewRecipe";
 import JointPurchaseRegistration from "./container/RecipeRegistration/JointPurchaseRegistration";
+import ViewIngredient from "./container/ViewDetail/ViewIngredient";
+import MyPage from "./container/MyPage/MyPage";
 import { ThemeProvider } from "styled-components";
 import theme from "./style/Theme";
 
@@ -37,6 +39,8 @@ class App extends Component {
                 path="/JointPurchaseRegistration"
                 component={JointPurchaseRegistration}
               />
+              <Route exact path="/MyPage" component={MyPage} />
+              <Route exact path="/ViewIngredient" component={ViewIngredient} />
             </ThemeProvider>
           </Switch>
         </Router>

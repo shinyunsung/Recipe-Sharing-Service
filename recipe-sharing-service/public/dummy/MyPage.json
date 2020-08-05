@@ -1,0 +1,33 @@
+{
+  "SearchResultsList": [
+    {
+      "name": "레시피 더보기",
+      "Recipe": [
+        {
+          "Name": "1.초간단 비법 오일로 파스타 9개 만들기",
+          "Like": "568",
+          "id": 1,
+          "Image": "https://homecuisine.co.kr/files/attach/images/1462/556/083/3f14d538fde95532c6a8a3d18f3de914.JPG"
+        },
+        {
+          "Name": "2.에어프라이어로 통삼겹 구이",
+          "Like": "232",
+          "id": 2,
+          "Image": "https://i.ytimg.com/vi/-YlTTGlAhag/maxresdefault.jpg"
+        },
+        {
+          "Name": "3.초간단 김치찌개",
+          "Like": "497",
+          "id": 3,
+          "Image": "https://recipe1.ezmember.co.kr/cache/recipe/2016/10/11/6dcc7dd9434577d65a9acb8ec97043591.jpg"
+        },
+        {
+          "Name": "4.초당옥수수 버터솥밥",
+          "Like": "147",
+          "id": 4,
+          "Image": "https://image.chosun.com/sitedata/image/202007/09/2020070902663_0.jpg"
+        }
+      ]
+    }
+  ]
+}

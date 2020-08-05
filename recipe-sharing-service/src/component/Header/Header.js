@@ -3,6 +3,7 @@ import { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import Login from "./Login";
 import Logo from "../../asets/Logo.png";
 
 class Header extends Component {
@@ -25,7 +26,8 @@ class Header extends Component {
       width: 940px;
       height: 100%;
       display: flex;
-      justify-content: center;
+      // justify-content: end;
+      justify-content: space-between;
       align-items: center;
     `;
 
@@ -35,6 +37,9 @@ class Header extends Component {
           <Link to="">
             <img src={Logo} alt="logo"></img>
           </Link>
+          <div style={{ width: "14%" }}>
+            <Login></Login>
+          </div>
         </Wrapper>
       </Body>
     );
